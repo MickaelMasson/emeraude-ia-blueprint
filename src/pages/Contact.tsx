@@ -16,7 +16,7 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -29,22 +29,39 @@ const Contact = () => {
       return;
     }
 
-    // Here you would normally send the form data to your backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Message envoyé !",
-      description: "Nous vous recontacterons sous 24h.",
-    });
+    try {
+      const response = await fetch("https://n8n.emeraudeia.fr/webhook/83b9d86b-ae67-480f-8fac-e50cc6585e7c", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi");
+      }
+
+      toast({
+        title: "Message envoyé !",
+        description: "Nous vous recontacterons sous 24h.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
