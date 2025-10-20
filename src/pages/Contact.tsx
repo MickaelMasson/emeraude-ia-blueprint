@@ -33,7 +33,7 @@ const Contact = () => {
       const response = await fetch("https://n8n.emeraudeia.fr/webhook/83b9d86b-ae67-480f-8fac-e50cc6585e7c", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "text/plain",
         },
         body: JSON.stringify(formData),
       });
