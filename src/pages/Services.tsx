@@ -36,8 +36,8 @@ const Services = () => {
                 },
                 {
                   step: "02",
-                  title: "Diagnostiquer",
-                  description: "Nous identifions les opportunités d'automatisation et chiffrons le ROI potentiel.",
+            title: "Diagnostiquer",
+            description: "Nous identifions les opportunités d'automatisation et chiffrons le retour sur investissement potentiel.",
                 },
                 {
                   step: "03",
@@ -99,7 +99,7 @@ const Services = () => {
                             {[
                               "Audit complet de vos processus métier",
                               "Identification des opportunités d'automatisation",
-                              "Estimation du ROI pour chaque solution",
+                              "Estimation du retour sur investissement pour chaque solution",
                               "Feuille de route priorisée sur 12-24 mois",
                               "Recommandations technologiques",
                             ].map((item) => (
@@ -111,9 +111,9 @@ const Services = () => {
                           </ul>
                         </div>
                         <div className="pt-4">
-                          <p className="text-2xl font-bold text-primary mb-2">Tarif : 1 500€ HT</p>
+                          <p className="text-2xl font-bold text-primary mb-2">Forfait unique de 725 € HT</p>
                           <p className="text-sm text-muted-foreground">
-                            Offert lors de la signature d'un projet de développement
+                            Déduit lors de la signature d'un projet de développement
                           </p>
                         </div>
                         <Button asChild variant="hero" size="lg" className="w-full">
@@ -253,10 +253,10 @@ const Services = () => {
             Commençons Par Un Diagnostic
           </h2>
           <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-            Sans engagement, identifions ensemble vos opportunités d'automatisation
+            Identifions ensemble vos opportunités d'automatisation
           </p>
           <Button asChild size="lg" variant="secondary" className="shadow-lg">
-            <Link to="/contact">Réserver Mon Diagnostic Gratuit</Link>
+            <Link to="/contact">Planifier un appel découverte</Link>
           </Button>
         </div>
       </section>

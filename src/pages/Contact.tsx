@@ -64,7 +64,7 @@ const Contact = () => {
               Parlons de Votre <span className="text-primary">Projet</span>
             </h1>
             <p className="text-xl text-muted-foreground">
-              Bénéficiez d'un diagnostic stratégique gratuit pour identifier vos opportunités d'automatisation
+              Échangeons sur vos opportunités pour identifier comment l'Intelligence Artificielle peut transformer votre entreprise
             </p>
           </div>
         </div>
@@ -252,21 +252,19 @@ const Contact = () => {
               <div>
                 <h3 className="font-semibold text-lg mb-2">Combien coûte le diagnostic stratégique ?</h3>
                 <p className="text-muted-foreground">
-                  Le diagnostic stratégique est proposé à 1 500€ HT, mais il est offert si vous décidez 
-                  de poursuivre avec un projet de développement.
+                  Notre Diagnostic Stratégique est proposé sous la forme d'un forfait unique de 725 € HT. Il s'agit d'un investissement initial conçu pour vous fournir une feuille de route claire et chiffrée, vous permettant de prendre des décisions éclairées.
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-lg mb-2">Combien de temps dure un diagnostic ?</h3>
                 <p className="text-muted-foreground">
-                  En moyenne 2 à 3 semaines, incluant les entretiens, l'analyse et la présentation des recommandations.
+                  Le diagnostic se déroule en deux temps principaux. Il commence par un atelier d'immersion d'une demi-journée que nous réalisons directement dans votre entreprise pour analyser vos processus. Ensuite, sous 3 jours, nous vous livrons une feuille de route complète et détaillée.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-2">Intervenez-vous uniquement en Bretagne ?</h3>
+                <h3 className="font-semibold text-lg mb-2">Quelle est votre zone d'intervention ?</h3>
                 <p className="text-muted-foreground">
-                  Notre cœur de cible est la Côte d'Émeraude (Saint-Malo, Dinan, Dinard), mais nous pouvons 
-                  intervenir dans toute la Bretagne selon les projets.
+                  Notre cœur d'activité est centré sur la Côte d'Émeraude, le pays de Saint-Malo et l'axe Rennes/Saint-Malo, où notre proximité est un atout majeur pour nos clients. Cependant, nous étudions avec attention tous les projets pertinents. Selon la nature de la mission, des interventions à distance ou des déplacements plus lointains sont tout à fait envisageables.
                 </p>
               </div>
             </div>

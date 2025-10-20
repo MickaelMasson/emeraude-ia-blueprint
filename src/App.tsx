@@ -6,10 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import CaseStudies from "./pages/CaseStudies";
+import CaseUsage from "./pages/CaseUsage";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import LegalNotice from "./pages/LegalNotice";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,14 +27,14 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<Services />} />
-            <Route path="/etudes-de-cas" element={<CaseStudies />} />
-            <Route path="/etudes-de-cas/:id" element={<CaseStudies />} />
+            <Route path="/cas-d-usage" element={<CaseUsage />} />
+            <Route path="/cas-d-usage/:id" element={<CaseUsage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<Blog />} />
             <Route path="/a-propos" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions-legales" element={<NotFound />} />
-            <Route path="/politique-confidentialite" element={<NotFound />} />
+            <Route path="/mentions-legales" element={<LegalNotice />} />
+            <Route path="/politique-confidentialite" element={<PrivacyPolicy />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

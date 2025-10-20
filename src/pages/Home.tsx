@@ -14,8 +14,8 @@ const Home = () => {
       description: "Identifiez vos opportunités d'automatisation et d'optimisation avec un audit personnalisé.",
       benefits: [
         "Audit complet de vos processus",
-        "Feuille de route IA sur-mesure",
-        "ROI estimé et priorisation",
+        "Feuille de route Intelligence Artificielle sur-mesure",
+        "Retour sur investissement estimé et priorisation",
       ],
       href: "/services/diagnostic",
     },
@@ -24,8 +24,8 @@ const Home = () => {
       title: "Solutions sur Mesure",
       description: "Développement de solutions IA adaptées à vos besoins spécifiques et votre budget.",
       benefits: [
-        "Automatisation de processus",
-        "Assistants IA métier",
+        "Automatisation de flux de travail",
+        "Assistants Intelligence Artificielle métier",
         "Intégrations personnalisées",
       ],
       href: "/services/solutions",
@@ -82,7 +82,7 @@ const Home = () => {
   const blogPosts = [
     {
       id: "ia-pme-mythes-realites",
-      title: "L'IA pour les PME : Mythes et Réalités",
+      title: "L'Intelligence Artificielle pour les Petites et Moyennes Entreprises : Mythes et Réalités",
       excerpt: "Démystifions ensemble les idées reçues sur l'intelligence artificielle et découvrons comment elle peut réellement servir votre entreprise.",
       category: "Vulgarisation",
       date: "15 Oct 2025",
@@ -90,8 +90,8 @@ const Home = () => {
     },
     {
       id: "automatiser-processus-rh",
-      title: "Comment Automatiser vos Processus RH",
-      excerpt: "De la gestion des candidatures au suivi des collaborateurs, découvrez les possibilités d'automatisation dans les RH.",
+      title: "Comment Automatiser vos Processus de Ressources Humaines",
+      excerpt: "De la gestion des candidatures au suivi des collaborateurs, découvrez les possibilités d'automatisation dans les Ressources Humaines.",
       category: "Cas d'usage",
       date: "10 Oct 2025",
       readTime: "7",
@@ -112,17 +112,17 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              L'Intelligence Artificielle <span className="text-primary">accessible</span> aux PME de la Côte d'Émeraude
+              L'Intelligence Artificielle <span className="text-primary">accessible</span> aux Petites et Moyennes Entreprises de la Côte d'Émeraude
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Transformez la complexité de l'IA en gains de productivité mesurables. 
+              Transformez la complexité de l'Intelligence Artificielle en gains de productivité mesurables. 
               Votre partenaire local pour des solutions sur-mesure et rentables.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="hero" size="lg">
-                <Link to="/contact">Demander un Diagnostic Gratuit</Link>
+                <Link to="/contact">Planifier un appel découverte</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/services">Découvrir nos Solutions</Link>
@@ -137,10 +137,6 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">10+</div>
-              <div className="text-sm text-muted-foreground">Projets Réalisés</div>
-            </div>
-            <div>
               <div className="text-3xl font-bold text-primary mb-2">100%</div>
               <div className="text-sm text-muted-foreground">Hébergement France</div>
             </div>
@@ -149,8 +145,12 @@ const Home = () => {
               <div className="text-sm text-muted-foreground">Basé à Saint-Malo</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">ROI</div>
-              <div className="text-sm text-muted-foreground">Rentabilité Prouvée</div>
+              <div className="text-3xl font-bold text-primary mb-2">Retour</div>
+              <div className="text-sm text-muted-foreground">Rentabilité Mesurable</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary mb-2">24h</div>
+              <div className="text-sm text-muted-foreground">Délai de Réponse</div>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@ const Home = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">ROI Garanti</h3>
+              <h3 className="text-xl font-semibold mb-2">Retour sur Investissement</h3>
               <p className="text-muted-foreground">
                 Des solutions pensées pour être rentables dès les premiers mois
               </p>
@@ -215,9 +215,9 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ils Nous Font Confiance</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Des Applications Concrètes</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Découvrez comment nous avons aidé des PME locales à se transformer
+              Découvrez des cas d'usage illustrant comment l'Intelligence Artificielle peut transformer les processus des entreprises de notre territoire
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -227,7 +227,7 @@ const Home = () => {
           </div>
           <div className="text-center mt-12">
             <Button asChild variant="outline" size="lg">
-              <Link to="/etudes-de-cas">Voir Toutes les Études de Cas</Link>
+              <Link to="/cas-d-usage">Voir Tous les Cas d'Usage</Link>
             </Button>
           </div>
         </div>
@@ -237,15 +237,15 @@ const Home = () => {
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">À Qui S'adresse Emeraude IA ?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">À Qui S'adresse Emeraude Intelligence Artificielle ?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Nous accompagnons les PME de 10 à 250 salariés sur le bassin de Saint-Malo et la Côte d'Émeraude
+              Nous accompagnons les Petites et Moyennes Entreprises de 10 à 250 salariés sur le bassin de Saint-Malo et la Côte d'Émeraude
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {["Tourisme & Hôtellerie", "Agroalimentaire", "Transport & Logistique", "Industrie & Commerce"].map((sector) => (
-              <div key={sector} className="bg-background rounded-lg p-6 shadow-card text-center">
-                <h3 className="font-semibold text-lg">{sector}</h3>
+              <div key={sector} className="bg-background rounded-lg p-6 shadow-card flex items-center justify-center min-h-[100px]">
+                <h3 className="font-semibold text-lg text-center">{sector}</h3>
               </div>
             ))}
           </div>
@@ -256,19 +256,23 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Actualités & Insights</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Actualités & Perspectives</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Nos derniers articles pour comprendre l'IA
+              Nos derniers articles pour comprendre l'Intelligence Artificielle
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {blogPosts.map((post) => (
-              <BlogCard key={post.id} {...post} />
+              <div key={post.id}>
+                <div className="opacity-60 pointer-events-none cursor-default">
+                  <BlogCard {...post} />
+                </div>
+              </div>
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg">
-              <Link to="/blog">Voir Tous les Articles</Link>
+            <Button variant="outline" size="lg" disabled className="opacity-50 cursor-default">
+              Articles à venir prochainement
             </Button>
           </div>
         </div>
@@ -281,10 +285,10 @@ const Home = () => {
             Prêt à Transformer Votre Entreprise ?
           </h2>
           <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-            Bénéficiez d'un diagnostic stratégique gratuit pour identifier vos opportunités d'automatisation
+            Échangeons sur vos opportunités pour identifier comment l'Intelligence Artificielle peut automatiser et optimiser vos processus
           </p>
           <Button asChild size="lg" variant="secondary" className="shadow-lg">
-            <Link to="/contact">Demander un Diagnostic Gratuit</Link>
+            <Link to="/contact">Planifier un appel découverte</Link>
           </Button>
         </div>
       </section>

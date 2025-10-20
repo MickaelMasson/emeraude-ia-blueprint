@@ -14,8 +14,7 @@ const About = () => {
               <span className="text-primary">Proximité</span> et Expertise au Service de Votre Transformation
             </h1>
             <p className="text-xl text-muted-foreground">
-              Emeraude IA est né d'une conviction : l'intelligence artificielle doit être accessible à toutes les PME, 
-              pas seulement aux grands groupes.
+              Emeraude Intelligence Artificielle est né d'une conviction : l'intelligence artificielle doit être accessible à toutes les Petites et Moyennes Entreprises, pas seulement aux grands groupes.
             </p>
           </div>
         </div>
@@ -29,7 +28,7 @@ const About = () => {
               <div>
                 <img 
                   src={aboutImage} 
-                  alt="Équipe Emeraude IA" 
+                  alt="Réunion de travail Emeraude IA" 
                   className="rounded-lg shadow-soft"
                 />
               </div>
@@ -37,19 +36,13 @@ const About = () => {
                 <h2 className="text-3xl font-bold mb-6">Notre Histoire</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Fondée par <strong className="text-foreground">Mickaël MASSON</strong>, Emeraude IA est née 
-                    sur la Côte d'Émeraude avec une mission claire : rendre l'IA accessible et rentable pour les PME locales.
+                    Après vingt années intenses dans la restauration, culminant à des postes de direction, <strong className="text-foreground">Mickaël MASSON</strong> a pris conscience d'un plafond professionnel et personnel. Cette prise de conscience l'a conduit vers une transition de carrière audacieuse.
                   </p>
                   <p>
-                    Fort d'une double expertise métier et technique, Mickaël a constaté que trop de dirigeants 
-                    de PME renonçaient à l'IA par manque de confiance ou par crainte de la complexité. 
-                    Les grandes agences parisiennes ne comprennent pas leurs enjeux, et les solutions "clés en main" 
-                    ne répondent jamais vraiment à leurs besoins spécifiques.
+                    La création d'Emeraude Intelligence Artificielle représente la convergence d'une passion pour la technologie et d'une opportunité de mettre à profit son expertise métier. C'est le fruit d'une quête d'alignement entre une ambition professionnelle renouvelée et la volonté d'être un entrepreneur engagé et père présent.
                   </p>
                   <p>
-                    Emeraude IA est la réponse à ce problème : un partenaire <strong className="text-foreground">local</strong>, 
-                    <strong className="text-foreground"> accessible</strong> et <strong className="text-foreground">expert</strong>, 
-                    qui parle le langage du business et construit des solutions vraiment sur-mesure.
+                    Emeraude Intelligence Artificielle est aujourd'hui un <strong className="text-foreground">partenaire local</strong>, <strong className="text-foreground">accessible</strong> et <strong className="text-foreground">expert</strong>, qui parle le langage des entreprises et construit des solutions vraiment sur-mesure pour les Petites et Moyennes Entreprises de la Côte d'Émeraude.
                   </p>
                 </div>
               </div>
@@ -58,8 +51,45 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Founder Section */}
       <section className="py-20 bg-secondary/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Le Fondateur</h2>
+            </div>
+            <div className="bg-gradient-to-br from-primary/5 to-secondary/20 rounded-lg p-8 md:p-12">
+              <div className="flex flex-col gap-8">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Mickaël MASSON</h3>
+                  <p className="text-primary font-medium mb-6">Fondateur & Expert Intelligence Artificielle</p>
+                  <div className="space-y-4 text-muted-foreground">
+                    <p>
+                      Fort de 15 années d'expérience à la direction d'entreprises, Mickaël a développé une expertise unique dans la détection et la résolution des points de friction qui freinent la performance des organisations.
+                    </p>
+                    <p>
+                      Cette <strong className="text-foreground">double compétence</strong> – stratégie métier et expertise technique en Intelligence Artificielle – lui permet aujourd'hui d'apporter une valeur incomparable à ses clients. Il ne se positionne pas comme un simple technicien, mais comme un <strong className="text-foreground">stratège qui comprend intimement les enjeux de rentabilité et de productivité</strong> d'une Petite ou Moyenne Entreprise.
+                    </p>
+                    <p>
+                      Aujourd'hui, il applique cette même expertise opérationnelle avec les outils de l'Intelligence Artificielle pour transformer les défis quotidiens des entreprises en opportunités de croissance mesurables.
+                    </p>
+                  </div>
+                  <div className="mt-6">
+                    <Button asChild variant="outline">
+                      <a href="https://www.linkedin.com/in/mickaelmasson/" target="_blank" rel="noopener noreferrer">
+                        Voir le profil LinkedIn
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Valeurs</h2>
@@ -72,97 +102,55 @@ const About = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <MapPin className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Proximité</h3>
+              <h3 className="text-xl font-semibold mb-3">Approche Humaine & Proximité</h3>
               <p className="text-muted-foreground">
-                Un partenaire local qui comprend votre territoire et vos enjeux. Disponible et réactif.
+                Un partenaire local qui comprend votre territoire et vos enjeux. Une relation de confiance basée sur l'écoute et la disponibilité.
               </p>
             </div>
             <div className="bg-background rounded-lg p-8 shadow-card">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Briefcase className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Pragmatisme</h3>
+              <h3 className="text-xl font-semibold mb-3">Pragmatisme & Rentabilité</h3>
               <p className="text-muted-foreground">
-                Des solutions orientées résultats et ROI, pas de la technologie pour la technologie.
+                Chaque solution est conçue pour générer un retour sur investissement mesurable et rapide. Pas de technologie pour la technologie.
               </p>
             </div>
             <div className="bg-background rounded-lg p-8 shadow-card">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <GraduationCap className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Pédagogie</h3>
+              <h3 className="text-xl font-semibold mb-3">Pédagogie & Autonomie</h3>
               <p className="text-muted-foreground">
-                Nous démystifions l'IA et formons vos équipes pour une adoption réussie.
+                Nous formons vos équipes pour une adoption réussie. L'objectif est de vous rendre autonome, pas de créer une dépendance.
               </p>
             </div>
             <div className="bg-background rounded-lg p-8 shadow-card">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Sécurité</h3>
+              <h3 className="text-xl font-semibold mb-3">Sécurité & Souveraineté</h3>
               <p className="text-muted-foreground">
-                Hébergement en France, conformité RGPD, et souveraineté de vos données garantie.
+                Hébergement en France, conformité réglementaire, et souveraineté totale de vos données garantie.
               </p>
             </div>
             <div className="bg-background rounded-lg p-8 shadow-card">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Heart className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Indépendance</h3>
+              <h3 className="text-xl font-semibold mb-3">Indépendance Technologique</h3>
               <p className="text-muted-foreground">
-                Aucune dépendance technologique. Nous choisissons toujours la meilleure solution pour vous.
+                Nous choisissons toujours la solution la plus pertinente pour votre besoin, sans être liés à un éditeur spécifique.
               </p>
             </div>
             <div className="bg-background rounded-lg p-8 shadow-card">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Partenariat</h3>
+              <h3 className="text-xl font-semibold mb-3">Partenariat Durable</h3>
               <p className="text-muted-foreground">
-                Une relation de long terme, pas une simple prestation. Votre succès est notre succès.
+                Une relation de long terme basée sur votre succès. Votre réussite est notre réussite.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Le Fondateur</h2>
-            </div>
-            <div className="bg-gradient-to-br from-primary/5 to-secondary/20 rounded-lg p-8 md:p-12">
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">Mickaël MASSON</h3>
-                  <p className="text-primary font-medium mb-6">Fondateur & Expert IA</p>
-                  <div className="space-y-4 text-muted-foreground">
-                    <p>
-                      Ingénieur de formation et consultant en transformation digitale pendant plus de 10 ans, 
-                      Mickaël a accompagné des dizaines d'entreprises dans leur évolution technologique.
-                    </p>
-                    <p>
-                      Spécialisé dans l'intelligence artificielle appliquée depuis 2020, il combine une expertise 
-                      technique pointue avec une compréhension fine des enjeux métier. Cette double casquette lui 
-                      permet de traduire les défis opérationnels en solutions IA concrètes et rentables.
-                    </p>
-                    <p>
-                      Passionné par la démocratisation de l'IA et profondément attaché au territoire breton, 
-                      il a fondé Emeraude IA pour que chaque PME locale puisse bénéficier de cette révolution 
-                      technologique.
-                    </p>
-                  </div>
-                  <div className="mt-6">
-                    <Button asChild variant="outline">
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                        Voir le profil LinkedIn
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -172,13 +160,13 @@ const About = () => {
       <section className="py-20 gradient-hero text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Travaillons Ensemble
+            Prêt à Discuter de Votre Projet ?
           </h2>
           <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-            Découvrez comment l'IA peut transformer votre entreprise lors d'un diagnostic gratuit
+            Échangeons sur vos défis et explorons ensemble comment l'Intelligence Artificielle peut transformer votre entreprise
           </p>
           <Button asChild size="lg" variant="secondary" className="shadow-lg">
-            <Link to="/contact">Prendre Contact</Link>
+            <Link to="/contact">Planifier un appel découverte</Link>
           </Button>
         </div>
       </section>

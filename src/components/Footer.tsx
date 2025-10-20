@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
+import { Linkedin, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-emeraudeia.png";
 
 const Footer = () => {
@@ -24,7 +25,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-sm opacity-90">
               <li><Link to="/services" className="hover:opacity-100 hover:text-primary transition-colors">Services</Link></li>
-              <li><Link to="/etudes-de-cas" className="hover:opacity-100 hover:text-primary transition-colors">Études de Cas</Link></li>
+              <li><Link to="/cas-d-usage" className="hover:opacity-100 hover:text-primary transition-colors">Cas d'Usage</Link></li>
               <li><Link to="/blog" className="hover:opacity-100 hover:text-primary transition-colors">Blog</Link></li>
               <li><Link to="/a-propos" className="hover:opacity-100 hover:text-primary transition-colors">À Propos</Link></li>
             </ul>
@@ -32,25 +33,18 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <h3 className="font-semibold mb-4">Nous Contacter</h3>
             <ul className="space-y-3 text-sm opacity-90">
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:contact@emeraudeia.fr" className="hover:opacity-100 hover:text-primary transition-colors">
-                  contact@emeraudeia.fr
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <a href="tel:+33612345678" className="hover:opacity-100 hover:text-primary transition-colors">
-                  +33 6 12 34 56 78
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Linkedin className="h-4 w-4" />
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 hover:text-primary transition-colors">
+              <li className="flex items-start gap-2">
+                <Linkedin className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                <a href="https://www.linkedin.com/in/mickaelmasson/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 hover:text-primary transition-colors">
                   LinkedIn
                 </a>
+              </li>
+              <li className="pt-2">
+                <Button asChild variant="outline" size="sm" className="w-full">
+                  <Link to="/contact">Prendre Contact</Link>
+                </Button>
               </li>
             </ul>
           </div>
