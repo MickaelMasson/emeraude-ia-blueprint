@@ -9,9 +9,17 @@ import { useToast } from "@/hooks/use-toast";
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     company: "",
     email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [callbackFormData, setCallbackFormData] = useState({
+    firstName: "",
+    lastName: "",
     phone: "",
     message: "",
   });
@@ -20,7 +28,7 @@ const Contact = () => {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
       toast({
         title: "Erreur",
         description: "Veuillez remplir tous les champs obligatoires.",
@@ -36,7 +44,10 @@ const Contact = () => {
           "Content-Type": "text/plain",
           "X-API-KEY": "Lm@LBafRrw2P2Fb2RmYb@SpYZ#tWHDfm7ZEsW^cquteF@dMb",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          formName: "diagnostic-strategique",
+          ...formData,
+        }),
       });
 
       if (!response.ok) {
@@ -50,7 +61,8 @@ const Contact = () => {
 
       // Reset form
       setFormData({
-        name: "",
+        firstName: "",
+        lastName: "",
         company: "",
         email: "",
         phone: "",
@@ -70,6 +82,64 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleCallbackChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setCallbackFormData({
+      ...callbackFormData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleCallbackSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!callbackFormData.firstName || !callbackFormData.lastName || !callbackFormData.phone || !callbackFormData.message) {
+      toast({
+        title: "Erreur",
+        description: "Veuillez remplir tous les champs obligatoires.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const response = await fetch("https://n8n.emeraudeia.fr/webhook/83b9d86b-ae67-480f-8fac-e50cc6585e7c", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+          "X-API-KEY": "Lm@LBafRrw2P2Fb2RmYb@SpYZ#tWHDfm7ZEsW^cquteF@dMb",
+        },
+        body: JSON.stringify({
+          formName: "demande-rappel",
+          ...callbackFormData,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi");
+      }
+
+      toast({
+        title: "Demande envoyée !",
+        description: "Nous vous rappellerons dans les plus brefs délais.",
+      });
+
+      // Reset form
+      setCallbackFormData({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -105,30 +175,44 @@ const Contact = () => {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
-                          Nom & Prénom *
+                        <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                          Prénom *
                         </label>
                         <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
+                          id="firstName"
+                          name="firstName"
+                          value={formData.firstName}
                           onChange={handleChange}
-                          placeholder="Jean Dupont"
+                          placeholder="Jean"
                           required
                         />
                       </div>
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium mb-2">
-                          Entreprise
+                        <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                          Nom *
                         </label>
                         <Input
-                          id="company"
-                          name="company"
-                          value={formData.company}
+                          id="lastName"
+                          name="lastName"
+                          value={formData.lastName}
                           onChange={handleChange}
-                          placeholder="Ma PME"
+                          placeholder="Dupont"
+                          required
                         />
                       </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium mb-2">
+                        Entreprise
+                      </label>
+                      <Input
+                        id="company"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        placeholder="Ma PME"
+                      />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-4">
@@ -192,68 +276,80 @@ const Contact = () => {
               </Card>
             </div>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <Card className="shadow-card">
+            {/* Callback Form */}
+            <div>
+              <Card className="shadow-soft">
                 <CardHeader>
-                  <CardTitle>Coordonnées</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <a href="mailto:contact@emeraudeia.fr" className="text-sm text-muted-foreground hover:text-primary">
-                        contact@emeraudeia.fr
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Téléphone</p>
-                      <a href="tel:+33612345678" className="text-sm text-muted-foreground hover:text-primary">
-                        +33 6 12 34 56 78
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">Localisation</p>
-                      <p className="text-sm text-muted-foreground">
-                        Saint-Malo<br />
-                        Côte d'Émeraude, Bretagne
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Linkedin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">LinkedIn</p>
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
-                        Suivez-nous
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-card bg-secondary/20">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-primary" />
-                    Disponibilité
-                  </CardTitle>
+                  <CardTitle className="text-2xl">Demander à être Rappelé</CardTitle>
+                  <CardDescription>
+                    Laissez-nous vos coordonnées et nous vous rappellerons rapidement.
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Du lundi au vendredi<br />
-                    9h - 18h<br />
-                    <span className="text-foreground font-medium mt-2 block">
-                      Réponse sous 24h garantie
-                    </span>
-                  </p>
+                  <form onSubmit={handleCallbackSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="callback-firstName" className="block text-sm font-medium mb-2">
+                          Prénom *
+                        </label>
+                        <Input
+                          id="callback-firstName"
+                          name="firstName"
+                          value={callbackFormData.firstName}
+                          onChange={handleCallbackChange}
+                          placeholder="Jean"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="callback-lastName" className="block text-sm font-medium mb-2">
+                          Nom *
+                        </label>
+                        <Input
+                          id="callback-lastName"
+                          name="lastName"
+                          value={callbackFormData.lastName}
+                          onChange={handleCallbackChange}
+                          placeholder="Dupont"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="callback-phone" className="block text-sm font-medium mb-2">
+                        Téléphone *
+                      </label>
+                      <Input
+                        id="callback-phone"
+                        name="phone"
+                        type="tel"
+                        value={callbackFormData.phone}
+                        onChange={handleCallbackChange}
+                        placeholder="+33 6 12 34 56 78"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="callback-message" className="block text-sm font-medium mb-2">
+                        Message *
+                      </label>
+                      <Textarea
+                        id="callback-message"
+                        name="message"
+                        value={callbackFormData.message}
+                        onChange={handleCallbackChange}
+                        placeholder="Indiquez vos disponibilités ou votre demande..."
+                        rows={4}
+                        required
+                      />
+                    </div>
+
+                    <Button type="submit" variant="hero" size="lg" className="w-full">
+                      Demander un rappel
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>
