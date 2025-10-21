@@ -99,8 +99,7 @@ const Home = () => {
         <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              L'Intelligence Artificielle <span className="text-primary">accessible</span> aux Entreprises de la Côte
-              d'Émeraude
+              L'Intelligence Artificielle <span className="text-primary">accessible</span> aux PME de la Côte d'Émeraude
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               Transformez la complexité de l'Intelligence Artificielle en gains de productivité mesurables. Votre
