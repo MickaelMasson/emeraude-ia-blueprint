@@ -9,11 +9,21 @@ interface ServiceCardProps {
   description: string;
   benefits: string[];
   href?: string;
+  image?: string;
 }
 
-const ServiceCard = ({ icon, title, description, benefits, href }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, benefits, href, image }: ServiceCardProps) => {
   const content = (
-    <Card className="shadow-card hover:shadow-soft transition-all duration-300 h-full group cursor-pointer">
+    <Card className="shadow-card hover:shadow-soft transition-all duration-300 h-full group cursor-pointer overflow-hidden">
+      {image && (
+        <div className="h-48 overflow-hidden">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      )}
       <CardHeader>
         <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
           <div className="text-primary">{icon}</div>

@@ -5,6 +5,18 @@ import ServiceCard from "@/components/ServiceCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import BlogCard from "@/components/BlogCard";
 import heroImage from "@/assets/hero-ai-consulting.jpg";
+import serviceDiagnostic from "@/assets/service-diagnostic.jpg";
+import serviceSolutions from "@/assets/service-solutions.jpg";
+import serviceMaintenance from "@/assets/service-maintenance.jpg";
+import caseHotel from "@/assets/case-hotel.jpg";
+import caseIndustry from "@/assets/case-industry.jpg";
+import caseLogistics from "@/assets/case-logistics.jpg";
+import sectorTourism from "@/assets/sector-tourism.jpg";
+import sectorAgro from "@/assets/sector-agro.jpg";
+import sectorTransport from "@/assets/sector-transport.jpg";
+import sectorIndustry from "@/assets/sector-industry.jpg";
+import blogIaPme from "@/assets/blog-ia-pme.jpg";
+import blogRh from "@/assets/blog-rh.jpg";
 
 const Home = () => {
   const services = [
@@ -18,6 +30,7 @@ const Home = () => {
         "Retour sur investissement estimé et priorisation",
       ],
       href: "/services/diagnostic",
+      image: serviceDiagnostic,
     },
     {
       icon: <Lightbulb className="h-6 w-6" />,
@@ -29,6 +42,7 @@ const Home = () => {
         "Intégrations personnalisées",
       ],
       href: "/services/solutions",
+      image: serviceSolutions,
     },
     {
       icon: <Shield className="h-6 w-6" />,
@@ -36,6 +50,7 @@ const Home = () => {
       description: "Un partenariat durable pour faire évoluer vos solutions au rythme de votre entreprise.",
       benefits: ["Support technique réactif", "Optimisations continues", "Formations équipes"],
       href: "/services/maintenance",
+      image: serviceMaintenance,
     },
   ];
 
@@ -47,6 +62,7 @@ const Home = () => {
       sector: "Tourisme",
       description: "Automatisation de la gestion des réservations et des demandes clients via un assistant IA.",
       results: ["40% de temps gagné sur la gestion des réservations", "Satisfaction client +25%"],
+      image: caseHotel,
     },
     {
       id: "industrie-controle-qualite",
@@ -55,6 +71,7 @@ const Home = () => {
       sector: "Industrie",
       description: "Système de détection automatique de défauts sur chaîne de production.",
       results: ["95% de précision dans la détection", "Réduction de 60% des rebuts"],
+      image: caseIndustry,
     },
     {
       id: "logistique-optimisation",
@@ -63,6 +80,7 @@ const Home = () => {
       sector: "Transport & Logistique",
       description: "IA prédictive pour optimiser les tournées et réduire les coûts de carburant.",
       results: ["20% d'économies sur les coûts", "Délais de livraison -15%"],
+      image: caseLogistics,
     },
   ];
 
@@ -75,6 +93,7 @@ const Home = () => {
       category: "Vulgarisation",
       date: "15 Oct 2025",
       readTime: "5",
+      image: blogIaPme,
     },
     {
       id: "automatiser-processus-rh",
@@ -84,7 +103,15 @@ const Home = () => {
       category: "Cas d'usage",
       date: "10 Oct 2025",
       readTime: "7",
+      image: blogRh,
     },
+  ];
+
+  const sectors = [
+    { name: "Tourisme & Hôtellerie", image: sectorTourism },
+    { name: "Agroalimentaire", image: sectorAgro },
+    { name: "Transport & Logistique", image: sectorTransport },
+    { name: "Industrie & Commerce", image: sectorIndustry },
   ];
 
   return (
@@ -142,7 +169,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
+      <section className="py-20 pattern-dots">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Notre Approche</h2>
@@ -193,7 +220,7 @@ const Home = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20">
+      <section className="py-20 pattern-grid">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Des Applications Concrètes</h2>
@@ -216,7 +243,7 @@ const Home = () => {
       </section>
 
       {/* Target Audience Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-secondary/30 pattern-dots">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -228,16 +255,24 @@ const Home = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {["Tourisme & Hôtellerie", "Agroalimentaire", "Transport & Logistique", "Industrie & Commerce"].map(
-              (sector) => (
-                <div
-                  key={sector}
-                  className="bg-background rounded-lg p-6 shadow-card flex items-center justify-center min-h-[100px]"
-                >
-                  <h3 className="font-semibold text-lg text-center">{sector}</h3>
+            {sectors.map((sector) => (
+              <div
+                key={sector.name}
+                className="group relative bg-background rounded-lg shadow-card overflow-hidden min-h-[200px] cursor-pointer hover:shadow-soft transition-all duration-300"
+              >
+                <div className="absolute inset-0">
+                  <img 
+                    src={sector.image} 
+                    alt={sector.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/30"></div>
                 </div>
-              ),
-            )}
+                <div className="relative h-full flex items-end p-6">
+                  <h3 className="font-semibold text-lg text-center w-full">{sector.name}</h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

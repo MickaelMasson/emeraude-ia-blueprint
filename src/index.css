@@ -45,6 +45,10 @@ All colors MUST be HSL.
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(162 100% 98%));
     --shadow-soft: 0 4px 20px -4px hsl(162 100% 37% / 0.15);
     --shadow-card: 0 2px 12px -2px hsl(210 15% 28% / 0.08);
+    
+    /* Texture patterns */
+    --pattern-dots: radial-gradient(circle, hsl(162 100% 37% / 0.05) 1px, transparent 1px);
+    --pattern-grid: linear-gradient(hsl(162 100% 37% / 0.03) 1px, transparent 1px), linear-gradient(90deg, hsl(162 100% 37% / 0.03) 1px, transparent 1px);
   }
 
   .dark {
@@ -81,6 +85,9 @@ All colors MUST be HSL.
     --gradient-subtle: linear-gradient(180deg, hsl(210 20% 10%), hsl(210 18% 12%));
     --shadow-soft: 0 4px 20px -4px hsl(162 100% 37% / 0.3);
     --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.5);
+    
+    --pattern-dots: radial-gradient(circle, hsl(162 100% 37% / 0.08) 1px, transparent 1px);
+    --pattern-grid: linear-gradient(hsl(162 100% 37% / 0.05) 1px, transparent 1px), linear-gradient(90deg, hsl(162 100% 37% / 0.05) 1px, transparent 1px);
   }
 }
 
@@ -113,5 +120,15 @@ All colors MUST be HSL.
   
   .shadow-card {
     box-shadow: var(--shadow-card);
+  }
+  
+  .pattern-dots {
+    background-image: var(--pattern-dots);
+    background-size: 20px 20px;
+  }
+  
+  .pattern-grid {
+    background-image: var(--pattern-grid);
+    background-size: 30px 30px;
   }
 }
