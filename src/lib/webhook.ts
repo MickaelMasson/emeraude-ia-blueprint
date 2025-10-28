@@ -12,10 +12,9 @@ export const sendToWebhook = async (formName: string, data: Record<string, any>)
     ...data,
   };
 
-  // 2. On ajoute un bloc try...catch pour la "connexion"
-  // Cela va intercepter les erreurs réseau (ex: proxy éteint, pas d'internet)
+  console.log("📤 Envoi au webhook:", { url: PROXY_URL, formName, payload });
+
   try {
-    // Si PROXY_URL est manquant, le fetch échouera et sera attrapé par le "catch"
     const response = await fetch(PROXY_URL, {
       method: "POST",
       headers: {
@@ -24,19 +23,24 @@ export const sendToWebhook = async (formName: string, data: Record<string, any>)
       body: JSON.stringify(payload),
     });
 
-    // 3. On vérifie si la réponse du serveur est un succès (ex: 200)
-    // Si le serveur répond 404 ou 500, cela lève une erreur.
+    console.log("📥 Réponse reçue:", { status: response.status, statusText: response.statusText });
+
     if (!response.ok) {
-      throw new Error(`Le serveur a répondu avec une erreur: ${response.status}`);
+      const errorText = await response.text();
+      console.error("❌ Erreur backend:", { status: response.status, body: errorText });
+      throw new Error(`Erreur backend (${response.status}): ${errorText}`);
     }
 
+    const responseData = await response.json().catch(() => ({}));
+    console.log("✅ Succès:", responseData);
+    
     return response;
 
   } catch (error) {
-    // 4. C'est ici qu'on gère l'échec de la connexion
-    console.error("Échec de l'envoi au proxy :", error);
-    // On "relance" l'erreur pour que le code du formulaire (qui a appelé
-    // cette fonction) puisse l'attraper et afficher un message à l'utilisateur.
+    console.error("❌ Échec complet:", error);
+    if (error instanceof Error) {
+      throw error;
+    }
     throw new Error("Erreur lors de la connexion au serveur. Veuillez réessayer.");
   }
 };
