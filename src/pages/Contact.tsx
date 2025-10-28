@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Linkedin, Clock, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendToWebhook } from "@/lib/webhook";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -38,21 +39,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("https://n8n.emeraudeia.fr/webhook/83b9d86b-ae67-480f-8fac-e50cc6585e7c", {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain",
-          "X-API-KEY": "Lm@LBafRrw2P2Fb2RmYb@SpYZ#tWHDfm7ZEsW^cquteF@dMb",
-        },
-        body: JSON.stringify({
-          formName: "diagnostic-strategique",
-          ...formData,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi");
-      }
+      await sendToWebhook("diagnostic-strategique", formData);
 
       toast({
         title: "Message envoyé !",
@@ -105,21 +92,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("https://n8n.emeraudeia.fr/webhook/83b9d86b-ae67-480f-8fac-e50cc6585e7c", {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain",
-          "X-API-KEY": "Lm@LBafRrw2P2Fb2RmYb@SpYZ#tWHDfm7ZEsW^cquteF@dMb",
-        },
-        body: JSON.stringify({
-          formName: "demande-rappel",
-          ...callbackFormData,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi");
-      }
+      await sendToWebhook("demande-rappel", callbackFormData);
 
       toast({
         title: "Demande envoyée !",
